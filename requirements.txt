@@ -1,0 +1,10 @@
+google_api_python_client==2.78.0
+matplotlib==3.6.3
+nltk==3.8.1
+numpy==1.24.1
+pandas==1.5.3
+Pillow==9.4.0
+plotly==5.13.0
+scikit_learn==1.2.1
+seaborn==0.12.2
+streamlit==1.17.0
