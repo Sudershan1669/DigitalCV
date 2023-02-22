@@ -62,7 +62,11 @@ def run():
     st.dataframe(df)
 
     # Reads in saved classification model
-    load_clf = pickle.load(open(r'C:\Users\Lakshmeesh s reddy\Desktop\Dinku\JOB\Pages\model002.pickle','rb'))
+#     load_clf = pickle.load(open(r'C:\Users\Lakshmeesh s reddy\Desktop\Dinku\JOB\Pages\model002.pickle','rb'))
+    
+    response = requests.get('https://raw.githubusercontent.com/LakshmeeshSR/DigitalCV/main/model002.pickle')
+    file = io.BytesIO(response.content)
+    load_clf = pickle.load(file)
 
     loc_index = X[X['data_columns'] == location].index[0]
 
