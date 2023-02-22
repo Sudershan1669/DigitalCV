@@ -3,6 +3,8 @@ def run():
     import streamlit as st, pandas as pd, numpy as np
     import json
     import pickle
+    import requests
+    import io
     from sklearn.linear_model import LinearRegression
 
 
