@@ -10,6 +10,7 @@ def run():
     from PIL import Image
     
     nltk.download('punkt')
+    nltk.download('stopwords')
 
 
     ps = PorterStemmer()
