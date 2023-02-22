@@ -8,7 +8,8 @@ def run():
     import nltk
     from nltk.stem.porter import PorterStemmer
     from PIL import Image
-
+    
+    nltk.download('punkt')
 
 
     ps = PorterStemmer()
