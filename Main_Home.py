@@ -5,7 +5,7 @@ import WhatsApp_app
 import IPL_Youtube
 import requests
 from io import BytesIO
-st.set_option('browser.serverAddress', '0.0.0.0')
+st.set_option('browser.serverAddress', '127.0.0.1')
 
 # Define function for main page
 #def show_main_page():
