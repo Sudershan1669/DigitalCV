@@ -54,8 +54,8 @@ def show_main_page():
 
 #         image = Image.open(r"C:\Users\Lakshmeesh s reddy\Desktop\Dinku\JOB\Pages\Pages\profile-picCLR.png")  
 #         st.image(image, width=230)
-#          https://raw.githubusercontent.com/LakshmeeshSR/DigitalCV/main/profile-picCLR.png       
-        url = "https://raw.githubusercontent.com/LakshmeeshSR/DigitalCV/main/profile-picCLR.png?token=GHSAT0AAAAAAB7DTZYO4SY3JZ3CZYAR3KXUY7V2M4A"
+#                 
+        url = "https://raw.githubusercontent.com/LakshmeeshSR/DigitalCV/main/profile-picCLR.png"
         response = requests.get(url)
         img = Image.open(BytesIO(response.content))
         st.image(img, width=230)
