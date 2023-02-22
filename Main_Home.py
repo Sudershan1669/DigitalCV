@@ -161,9 +161,13 @@ def show_main_page():
     
     with col2:
 
-        image_2 = Image.open(r"C:\Users\Lakshmeesh s reddy\Desktop\Dinku\JOB\Pages\Pages\SmartAC-removebg.png")
-        st.image(image_2,width=250)
-    # col2.image(image_2, use_column_width=True)  
+#         image_2 = Image.open(r"C:\Users\Lakshmeesh s reddy\Desktop\Dinku\JOB\Pages\Pages\SmartAC-removebg.png")
+#         st.image(image_2,width=250)
+        
+        response = requests.get("https://raw.githubusercontent.com/LakshmeeshSR/DigitalCV/main/SmartAC-removebg.png")
+        img = Image.open(BytesIO(response.content))
+        st.image(img, width=230)
+    
     ##############################################################
 
     st.write("<h1 style='text-align: left; color: #763E3E; font-size: 26px; font-family:Century Gothic;'>Internships 👷‍♂️</h1>", unsafe_allow_html=True)
