@@ -5,6 +5,7 @@ def run():
     import streamlit as st
     import WhatsApp_Preprocessor, helper
     import matplotlib.pyplot as plt
+    import requests
     import seaborn as sns
     import os
     import zipfile
@@ -30,14 +31,20 @@ def run():
     #     st.sidebar.download_button(label="Download", data=bytes, file_name="folder.zip", mime="application/zip")
 
 
+#     button_label = "Dont have the chat file? Download a sample here"
+#     app_dir = os.path.abspath(os.path.dirname(__file__))
+#     folder_path = os.path.join(app_dir, r"C:\Users\Lakshmeesh s reddy\Desktop\Dinku\JOB\Pages\Pages\assets")
+#     output_path = "folder.zip"
+#     create_zip_archive(folder_path, output_path)
+#     with open(output_path, "rb") as f:
+#             bytes = f.read()
+#     st.sidebar.download_button(label= button_label, data=bytes, file_name="folder.zip", mime="application/zip")
+    
     button_label = "Dont have the chat file? Download a sample here"
-    app_dir = os.path.abspath(os.path.dirname(__file__))
-    folder_path = os.path.join(app_dir, r"C:\Users\Lakshmeesh s reddy\Desktop\Dinku\JOB\Pages\Pages\assets")
-    output_path = "folder.zip"
-    create_zip_archive(folder_path, output_path)
-    with open(output_path, "rb") as f:
-            bytes = f.read()
-    st.sidebar.download_button(label= button_label, data=bytes, file_name="folder.zip", mime="application/zip")
+    url = "https://raw.githubusercontent.com/LakshmeeshSR/DigitalCV/main/assets/Download_txt_file.zip"
+    response = requests.get(url)
+
+    st.sidebar.download_button(label=button_label, data=response.content, file_name="chat_txt_file.zip", mime="application/zip")
 
     page_bg_img = f"""
     <style>
