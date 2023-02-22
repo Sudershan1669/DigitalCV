@@ -5,13 +5,13 @@ import WhatsApp_app
 import IPL_Youtube
 import requests
 from io import BytesIO
-
+st.set_option('browser.serverAddress', '0.0.0.0')
 
 # Define function for main page
 #def show_main_page():
 def show_main_page():
     
-    st.set_option('browser.serverAddress', '0.0.0.0')
+    
     import streamlit as st
     from PIL import Image
 
