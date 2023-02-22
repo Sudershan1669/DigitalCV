@@ -165,7 +165,7 @@ def show_main_page():
 #         image_2 = Image.open(r"")
 #         st.image(image_2,width=250)
         
-        response = requests.get("https://github.com/LakshmeeshSR/DigitalCV/blob/main/SmartAC-removebg.png")
+        response = requests.get("https://raw.githubusercontent.com/LakshmeeshSR/DigitalCV/main/SmartAC-removebg.png")
         img = Image.open(BytesIO(response.content))
         st.image(img, width=230)
     
