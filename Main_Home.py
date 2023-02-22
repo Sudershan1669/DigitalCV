@@ -54,8 +54,8 @@ def show_main_page():
 
 #         image = Image.open(r"C:\Users\Lakshmeesh s reddy\Desktop\Dinku\JOB\Pages\Pages\profile-picCLR.png")  
 #         st.image(image, width=230)
-        
-        url = "https://raw.githubusercontent.com/LakshmeeshSR/DigitalCV/main/profile-picCLR.png"
+#          https://raw.githubusercontent.com/LakshmeeshSR/DigitalCV/main/profile-picCLR.png       
+        url = "https://raw.githubusercontent.com/LakshmeeshSR/DigitalCV/main/profile-picCLR.png?token=GHSAT0AAAAAAB7DTZYO4SY3JZ3CZYAR3KXUY7V2M4A"
         response = requests.get(url)
         img = Image.open(BytesIO(response.content))
         st.image(img, width=230)
@@ -161,11 +161,11 @@ def show_main_page():
         st.markdown("<p class='text'>Designed cassette ceiling AC with integrated lights, speakers and projector along with voice enabled features. Also performed flow analysis.</p>", unsafe_allow_html=True)
     
     with col2:
-
-#         image_2 = Image.open(r"C:\Users\Lakshmeesh s reddy\Desktop\Dinku\JOB\Pages\Pages\SmartAC-removebg.png")
+# C:\Users\Lakshmeesh s reddy\Desktop\Dinku\JOB\Pages\Pages\SmartAC-removebg.png
+#         image_2 = Image.open(r"")
 #         st.image(image_2,width=250)
         
-        response = requests.get("https://raw.githubusercontent.com/LakshmeeshSR/DigitalCV/main/SmartAC-removebg.png")
+        response = requests.get("https://raw.githubusercontent.com/LakshmeeshSR/DigitalCV/main/SmartAC-removebg.png?token=GHSAT0AAAAAAB7DTZYOJRTUG2LG7MEK6EKCY7V2QOA")
         img = Image.open(BytesIO(response.content))
         st.image(img, width=230)
     
