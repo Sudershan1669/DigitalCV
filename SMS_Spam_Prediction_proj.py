@@ -2,6 +2,8 @@ def run():
     import streamlit as st
     import pickle
     import string
+    import requests
+    import io
     from nltk.corpus import stopwords
     import nltk
     from nltk.stem.porter import PorterStemmer
@@ -77,8 +79,17 @@ def run():
         return " ".join(y)
 
 
-    tfidf = pickle.load(open(r'C:\Users\Lakshmeesh s reddy\Desktop\Dinku\JOB\SMS_Spam_Project\SMS_Spam_vectorizer.pkl','rb'))
-    model = pickle.load(open(r'C:\Users\Lakshmeesh s reddy\Desktop\Dinku\JOB\SMS_Spam_Project\SMS_Spam_model.pkl','rb'))
+#     tfidf = pickle.load(open(r'C:\Users\Lakshmeesh s reddy\Desktop\Dinku\JOB\SMS_Spam_Project\SMS_Spam_vectorizer.pkl','rb'))
+#     model = pickle.load(open(r'C:\Users\Lakshmeesh s reddy\Desktop\Dinku\JOB\SMS_Spam_Project\SMS_Spam_model.pkl','rb'))
+    
+    response = requests.get('https://raw.githubusercontent.com/LakshmeeshSR/DigitalCV/main/SMS_Spam_vectorizer.pkl')
+    file = io.BytesIO(response.content)
+    tfidf = pickle.load(file)
+
+
+    response = requests.get('https://raw.githubusercontent.com/LakshmeeshSR/DigitalCV/main/SMS_Spam_model.pkl')
+    file = io.BytesIO(response.content)
+    model = pickle.load(file)
 
 
     page_bg_img = f"""
