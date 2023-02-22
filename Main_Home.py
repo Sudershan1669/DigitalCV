@@ -3,6 +3,9 @@ import LinearReg
 import SMS_Spam_Prediction_proj
 import WhatsApp_app
 import IPL_Youtube
+import requests
+from io import BytesIO
+
 
 # Define function for main page
 #def show_main_page():
@@ -48,8 +51,13 @@ def show_main_page():
 
     with col1:
 
-        image = Image.open(r"C:\Users\Lakshmeesh s reddy\Desktop\Dinku\JOB\Pages\Pages\profile-picCLR.png")  
-        st.image(image, width=230)
+#         image = Image.open(r"C:\Users\Lakshmeesh s reddy\Desktop\Dinku\JOB\Pages\Pages\profile-picCLR.png")  
+#         st.image(image, width=230)
+        
+        url = "https://raw.githubusercontent.com/LakshmeeshSR/DigitalCV/main/profile-picCLR.png"
+        response = requests.get(url)
+        img = Image.open(BytesIO(response.content))
+        st.image(img, width=230)
 
     with col2:
 
@@ -184,17 +192,9 @@ def show_main_page():
 def select_project():
     st.sidebar.title("Select a project")    
     # project01 = st.sidebar.radio("Home", ["Home"])
-    project = st.sidebar.selectbox('Projects', ["Home","Linear Regression", "WhatsApp Chat analyzer", "Logistic Regression","IPL Analysis using Youtube API"])
+    project = st.sidebar.selectbox('Projects', ["Home","Linear Regression", "IPL Analysis using Youtube API" , "Logistic Regression","WhatsApp Chat analyzer"])
     return project
 
-
-
-
-# Define function for "Back to Main Page" button
-# def show_back_to_main_button():
-#     st.sidebar.markdown("---")
-#     if st.sidebar.button("Back to Main Page"):
-#         return True
 
 
 # Handle project selection
@@ -202,68 +202,21 @@ project = select_project()
 
 if project == "Linear Regression":
     LinearReg.run()
-    # if show_back_to_main_button():
-    #     project = None
-    #     show_main_page()
+
+ 
+elif project == "IPL Analysis using Youtube API":
+    IPL_Youtube.run()
+
+    
+elif project == "Logistic Regression":
+    SMS_Spam_Prediction_proj.run()
 
 elif project == "WhatsApp Chat analyzer":
     WhatsApp_app.run()
 
-elif project == "Logistic Regression":
-    SMS_Spam_Prediction_proj.run()
-    # if show_back_to_main_button():
-    #     project = None
-    #     show_main_page()
 
-elif project == "IPL Analysis using Youtube API":
-    IPL_Youtube.run()
-    # if show_back_to_main_button():
-    #     project = None
-    #     show_main_page()
 
 else:
     show_main_page()
 
 
-
-# def select_project():
-#     st.sidebar.title("Select a project")
-#     project = st.sidebar.radio("Project", ["project","Project 1", "Project 2"])
-#     return project
-
-# # Define function for "Back to Main Page" button
-# def show_back_to_main_button():
-#     st.sidebar.markdown("---")
-#     if st.sidebar.button("Back to Main Page"):
-#         return True
-
-# show_main_page()
-
-
-# # Handle project selection
-# project = select_project()
-# if project == "Project 1":
-#     lsrStreamlit.run()
-# elif project == "Project 2":
-#     SMS_Spam_Prediction_proj.run()
-
-# # Show "Back to Main Page" button when a project is selected
-# if project and show_back_to_main_button():
-#     project = None
-#     show_main_page()
-
-
-
-# # # # Display selected project in main section
-# # # if project == 'Project 1':
-# # #     lsrStreamlit.run()
-
-# # # # project == 'Project 2':
-# # # else:
-# # #     SMS_Spam_Prediction_proj.run()
-
-# # # # Show "Back to Main Page" button when a project is selected
-# # # if project:
-# # #     st.sidebar.markdown('---')
-# # #     if st.sidebar.button('Back to Main Page'):
-# # #         project = None
